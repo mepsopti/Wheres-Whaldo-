@@ -351,6 +351,40 @@ The maxillonasalis bands act as a SECOND spectral filter independent of the air 
 
 **Reference image:** `wt_whalehead_free.webp` (Cranford illustration showing maxillonasalis sectioned over spermaceti organ)
 
+### O10: The Complete Sound Production Model - Excite, Resonate, Modulate, Filter
+
+**Observation (2026-03-30):** The sperm whale sound system is not a "click generator" - it's a coupled resonant instrument with distinct functional layers:
+
+1. **Phonic lips = Excitation source.** Sustained drive (~500-800us, not a single 50us impulse). Pumps energy into the cavity to build standing waves. Solver optimization confirmed long source durations are needed.
+
+2. **Spermaceti cavity = Resonator.** Bounded by two near-perfect mirrors (frontal and distal air sacs, R~0.997). Cavity length, diameter, and spermaceti sound speed determine the resonant mode frequencies. This is the fundamental "voice." The P0/P1/P2 pulse structure in the time domain is the transient buildup and decay of these cavity modes.
+
+3. **Maxillonasalis muscles = Real-time modulator.** Contracts on ms timescale to:
+   - Change cavity diameter (shifts transverse resonant modes)
+   - Compress spermaceti (increases density + sound speed, shifts longitudinal modes)
+   - Load the dorsal surface with variable impedance (damps specific modes)
+   - The organ may be longer than IPI alone predicts to accommodate compression
+
+4. **Temperature = Slow modulator.** Changes spermaceti sound speed over minutes. Coarse pitch control (~250Hz per 9C). Independent of muscle control.
+
+5. **Exit path = Spectral filter.** Sound exits through: case wall (connective tissue) -> maxillonasalis muscle -> junk (lipid with ~10-30 connective tissue septa) -> blubber -> skin -> water. Each layer preferentially absorbs high frequencies (0.3-5.0 dB/cm/MHz). Total exit path is ~1-2m of tissue. This is likely why recorded spectra peak at 5-10kHz even though cavity resonance may be higher.
+
+6. **Ocean propagation = Final filter.** Depth-integrated, frequency-dependent absorption through the water column. Whale at 500-1400m depth, sound traveling through cold deep water to surface hydrophone. Further attenuates high frequencies.
+
+**Signal chain:** Lips (excite) -> Cavity (resonate) -> Muscles (modulate) -> Exit tissues (filter) -> Ocean (attenuate) -> Hydrophone (record)
+
+**What makes each whale unique:** Skull geometry sets the cavity shape (fixed anatomy). Muscle tone sets the modulation pattern (variable physiology). Temperature sets the coarse pitch (variable physiology). Exit-path tissue thickness varies per individual.
+
+**Rejected hypothesis:** Skull as vibrating plate (like a guitar body). The skull is too thick (8cm+), too heavily damped by surrounding tissue, and impedance mismatch with tissue is too low (3:1 vs 3000:1 for wood/air). The skull acts as a rigid reflector, not a vibrating element. Sub-100Hz energy in recordings is likely ocean ambient, whole-body recoil, or click-train envelope modulation.
+
+**Solver evidence (2026-03-30):** 31-parameter optimization with differential evolution. At iteration 2:
+- Source duration converges to 500-800us (sustained excitation, not single impulse)
+- Whale depth converges to 500-1400m (deep water propagation critical)
+- Recording distance converges to 1300-1500m (further than assumed)
+- Exit-path tissue absorption matters: muscle 1-2 dB/cm/MHz, skin 1.4-4.7 dB/cm/MHz
+- Absorption power law 1.3-2.0 (super-linear frequency dependence)
+- Organ length pushing upper bounds (5-6m) suggesting compression factor needed
+
 ---
 
 ## Paper: "Where's WHaldo?"
