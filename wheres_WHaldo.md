@@ -316,6 +316,41 @@ Skull grows throughout life, rostral basin deepens in males. The voiceprint shou
 ### O8: Ocean as a Matched Filter
 If we know the ocean sound speed profile (from CTD data or climatology), we can model propagation and "undo" it from the recorded signal. This recovers the at-source voiceprint from a distant recording. Critical for ID from passive acoustic monitoring (PAM) arrays.
 
+### O9: Maxillonasalis as Vocal Cords - A Second Spectral Filter (NOVEL HYPOTHESIS)
+
+**Observation (2026-03-30):** The maxillonasalis muscle wraps over the spermaceti organ in distinct transverse bands (visible in Cranford anatomical illustrations). These segmented muscle bands stretched across a resonant cavity are structurally analogous to vocal cords.
+
+**Current literature model:**
+- Source = phonic lips (analogous to vocal cords)
+- Filter = distal air sac shape (analogous to vocal tract)
+- Maxillonasalis described as "controlling organ shape" and "pressurizing air" (Cranford 1999, Huggenberger 2014)
+- CETI vowels paper (2025) shows formant structures similar to human vowels, attributes to air sac shape changes
+
+**What's NOT in the literature (our hypothesis):**
+The maxillonasalis bands act as a SECOND spectral filter independent of the air sacs. Each transverse band, when tensioned, selectively damps or passes specific frequencies as the acoustic pulse bounces through the spermaceti organ beneath them. This is functionally identical to how vocal cord tension controls which harmonics pass in human speech.
+
+**Physics argument:**
+1. **Impedance loading:** A tensioned muscle band (rho~1050, c~1570) pressed against the spermaceti (rho=857, c=1370) creates a local impedance mismatch. The reflection coefficient at that band depends on the band's tension and thickness.
+2. **Frequency selectivity:** Each band has a resonant frequency determined by its length, thickness, and tension (f = (1/2L) * sqrt(T/mu), same as a vibrating string). Frequencies matching a band's resonance get absorbed; others pass.
+3. **Segmented control:** The bands are independently innervated. Different tension patterns create different spectral filter profiles - like an equalizer with ~5-8 bands.
+4. **Timescale:** Muscle contraction operates in milliseconds - fast enough to change the spectral filter BETWEEN CLICKS within a single coda. Temperature modulation (the other known mechanism) takes minutes.
+
+**Predictions:**
+- Spectral content should vary systematically with maxillonasalis activation patterns
+- Whales could voluntarily change their spectral voiceprint in real time
+- The "a-coda" vs "i-coda" vowel distinction (CETI 2025) may correspond to different maxillonasalis tension states, not just air sac shape
+- Individual voiceprint differences may partly reflect individual differences in muscle mass, band count, and resting tension - not just skull geometry
+
+**Modulation channels available to the whale (summary):**
+1. Spermaceti temperature - slow pitch drift (minutes) - ~250Hz per 9C
+2. Maxillonasalis tension - fast spectral shaping (milliseconds) - selective frequency filter
+3. Air sac shape/tension - reflection coefficient tuning
+4. Jaw/mandible position - impedance matching at tissue-water boundary
+
+**To model:** Add maxillonasalis bands to the FDTD/FEM simulator as impedance-loaded regions on the dorsal surface of the spermaceti organ. Vary band tension and measure spectral output changes. Compare to measured a-coda vs i-coda spectral differences.
+
+**Reference image:** `wt_whalehead_free.webp` (Cranford illustration showing maxillonasalis sectioned over spermaceti organ)
+
 ---
 
 ## Paper: "Where's WHaldo?"
@@ -324,11 +359,12 @@ If we know the ocean sound speed profile (from CTD data or climatology), we can 
 "Beyond Inter-Pulse Interval: Spectral Voiceprints from Spermaceti Cavity Resonance Enable Individual Identification of Sperm Whales"
 
 ### Novel Contributions (what's not in the literature)
-1. Full 2D wavefront simulation showing how head geometry shapes spectral envelope (not just IPI timing)
+1. Full 2D/3D wavefront simulation using real skull geometry showing how head anatomy shapes spectral envelope (not just IPI timing)
 2. Cavity interference patterns (resonant frequencies + harmonics) as individual-specific fingerprints
-3. ML classification achieving 91.5% individual ID from spectral features alone (3 whales, 1,500 codas)
+3. ML classification validated across 3 datasets: DSWP 91.5% (3 whales), CETI 85.9% (13 whales), Gero 57.7% ICI-only (16 whales)
 4. Simulated temperature modulation of spermaceti shifting fundamental resonance (250Hz shift, 0.18ms IPI shift at 9C change)
 5. Prediction of voiceprint from anatomy - connecting physics simulation to measured acoustic signatures
+6. **Maxillonasalis as vocal cord analogue** - hypothesis that transverse muscle bands over the spermaceti organ act as a fast (ms-timescale) spectral filter independent of air sac shape, with segmented control enabling real-time frequency modulation between clicks
 
 ### What's Known (prior art)
 - IPI correlates with body length (Gordon 1991, Madsen 2002)
