@@ -4,3 +4,4 @@ __pycache__/
 .env
 *.wav
 *.npy
+data/3d_scans/*.obj
